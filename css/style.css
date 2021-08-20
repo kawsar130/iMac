@@ -1,0 +1,112 @@
+/* google font importing */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
+
+* {
+    /* border: 1px solid rgb(207, 207, 207); */
+    font-size: 0.95rem;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    padding: 0 2em;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+}
+
+.container .image-container, .container .text-container {
+    width: 550px;
+    padding: 30px 20px;
+}
+
+.text-container section h1 {
+    margin-top: 0;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.image-container img {
+    max-width: 450px;
+}
+
+.customize-container {
+    padding: 15px 0;
+}
+
+.memory, .storage, .delivery {
+    display: flex;
+}
+
+.memory p, .storage p, .delivery p {
+    border: 1px solid rgb(56, 0, 0);
+    padding: 8px;
+    margin: 0 5px 0 0;
+    border-radius: 5px;
+}
+
+.memory p:hover, .storage p:hover, .delivery p:hover {
+    background: #367e38;
+    color: white;
+}
+
+table {
+    margin: 30px 0;
+    width: 350px;
+}
+
+table, td {
+    border-bottom: 1px solid rgb(224, 224, 224);
+    border-collapse: collapse;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px 0;
+}
+
+#total-price {
+    border-top: 2px solid rgb(51, 51, 51);
+}
+
+.promo-container p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+#promo-input {
+    width: 250px;
+    padding: 10px;
+}
+
+#promo-apply-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 90px;
+    font-size: 1.25em;
+    border: none;
+    cursor: pointer;
+}
+
+#promo-apply-btn:hover {
+    background-color: #367e38;
+}
+
+hr {
+    width: 80%;
+    height: 1px;
+    background-color: rgb(255, 206, 206);
+    border: none;
+}
+
+footer p, footer span {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
