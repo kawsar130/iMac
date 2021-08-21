@@ -25,33 +25,29 @@
                     Keyboard - US English</p>
             </section>
 
-            <section>
+            <section id="customize-config">
                 <div class="customize-container">
                     <h3>Memory</h3>
-                    <div class="memory">
-                        <p>8GB unified memory</p>
-                        <p>16GB unified memory</p>
+                    <div id="memory" class="memory">
+                        <p id="memory-8gb">8GB unified memory</p>
+                        <p id="memory-16gb">16GB unified memory</p>
                     </div>
                 </div>
 
                 <div class="customize-container">
                     <h3>Storage</h3>
                     <div class="storage">
-                        <p>256GB SSD storage</p>
-                        <p>512GB SSD Storage</p>
-                        <p>1TB SSD storage</p>
+                        <p id="storage-256gb">256GB SSD storage</p>
+                        <p id="storage-512gb">512GB SSD Storage</p>
+                        <p id="storage-1tb">1TB SSD storage</p>
                     </div>
                 </div>
 
                 <div class="customize-container">
                     <h3>Choose your delivery option</h3>
                     <div class="delivery">
-                        <p>
-                            Friday, Aug 25 Free Prime Delivery
-                        </p>
-                        <p>
-                            Friday, Aug 21 Delivery charge $20
-                        </p>
+                        <p id="delivery-free">Friday, Aug 25 Free Prime Delivery</p>
+                        <p id="delivery-express">Friday, Aug 21 Delivery charge $20</p>
                     </div>
                 </div>
             </section>
@@ -60,23 +56,23 @@
                 <table>
                     <tr>
                         <td>Best Price</td>
-                        <td>$1299</td>
+                        <td>$<span id="price-base">1299</span></td>
                     </tr>
                     <tr>
                         <td>Extra Memory Cost</td>
-                        <td>$0</td>
+                        <td>$<span id="price-memory">0</span></td>
                     </tr>
                     <tr>
                         <td>Extra Storage Cost</td>
-                        <td>$0</td>
+                        <td>$<span id="price-storage">0</span></td>
                     </tr>
                     <tr>
                         <td>Delivery Charge</td>
-                        <td>$0</td>
+                        <td>$<span id="price-delivery">0</span></td>
                     </tr>
                     <tr id="total-price">
                         <td>Total Price</td>
-                        <td>$1299</td>
+                        <td>$<span id="price-total">1299</span></td>
                     </tr>
                 </table>
 
@@ -92,11 +88,11 @@
     </main>
     <hr>
     <footer>
-        <p>Total: $<span>1299</span></p>
+        <p>Total: $<span id="price-total-footer">1299</span></p>
     </footer>
 
     <!-- local javascript file -->
-    <script src="js/script.js"></script>
+    <script src="js/script1.js"></script>
 </body>
 
 </html>
