@@ -6,40 +6,65 @@ const storage1TbCost = 180;
 const deliveryPrimeCost = 0;
 const deliveryUrgentCost = 20;
 
+const priceTotal = document.getElementById('price-total');
+const priceTotalFooter = document.getElementById('price-total-footer');
+
+let priceTotalAmount;
+
 document.getElementById('customize-config').addEventListener('click', function (event) {
     const clickedElement = event.target;
-    const clickedElementId = clickedElement.id;
+    const elementId = clickedElement.id;
     const priceBase = parseFloat(document.getElementById('price-base').innerText);
     const priceMemory = document.getElementById('price-memory');
     const priceStorage = document.getElementById('price-storage');
     const priceDelivery = document.getElementById('price-delivery');
-    const priceTotal = document.getElementById('price-total');
-    
+
     // console.log(clickedElementId);
-    if (clickedElementId.indexOf('memory') != -1) {
-        const memoryCostForCustomize = getMemoryCost(clickedElementId);
+    if (elementId.indexOf('memory') != -1) {
+        const memoryCostForCustomize = getMemoryCost(elementId);
         priceMemory.innerText = memoryCostForCustomize;
     }
 
-    if (clickedElementId.indexOf('storage') != -1) {
-        const storageCostForCustomize = getStorageCost(clickedElementId);
+    if (elementId.indexOf('storage') != -1) {
+        const storageCostForCustomize = getStorageCost(elementId);
         priceStorage.innerText = storageCostForCustomize;
+
     }
 
-    if (clickedElementId.indexOf('delivery') != -1) {
-        const deliveryCost = getDeliveryCost(clickedElementId);
+    if (elementId.indexOf('delivery') != -1) {
+        const deliveryCost = getDeliveryCost(elementId);
         priceDelivery.innerText = deliveryCost;
     }
 
-    priceTotal.innerText = priceBase + parseFloat(priceMemory.innerText) + parseFloat(priceStorage.innerText) + parseFloat(priceDelivery.innerText);
+    priceTotalAmount = priceBase + parseFloat(priceMemory.innerText) + parseFloat(priceStorage.innerText) + parseFloat(priceDelivery.innerText);
+    priceTotal.innerText = priceTotalAmount;
+    priceTotalFooter.innerText = priceTotalAmount;
+});
+
+document.getElementById('promo-apply-btn').addEventListener('click', function () {
+    const promoInputField = document.getElementById('promo-input');
+    const promoCode = promoInputField.value;
+    if (promoCode == 'stevekaku') {
+        // const discountAmount = priceTotalAmount * 2;
+        console.log(priceTotalAmount);
+    }
+    promoInputField.value = '';
 });
 
 
 function getMemoryCost(id) {
     if (id == 'memory-16gb') {
+        document.getElementById('memory-16gb').style.backgroundColor = 'darkRed';
+        document.getElementById('memory-16gb').style.color = 'white';
+        document.getElementById('memory-8gb').style.backgroundColor = 'inherit';
+        document.getElementById('memory-8gb').style.color = 'inherit';
         return memory16GbCost;
     }
     else {
+        document.getElementById('memory-8gb').style.backgroundColor = 'darkRed';
+        document.getElementById('memory-8gb').style.color = 'white';
+        document.getElementById('memory-16gb').style.backgroundColor = 'inherit';
+        document.getElementById('memory-16gb').style.color = 'inherit';
         return memory8GbCost;
     }
 }
