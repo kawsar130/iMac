@@ -18,7 +18,7 @@ body {
     margin: auto;
     justify-content: center;
 }
-
+/* making 2 container equally divided */
 .container .image-container, .container .text-container {
     width: 550px;
     padding: 30px 20px;
@@ -58,7 +58,7 @@ table {
     margin: 30px 0;
     width: 350px;
 }
-
+/* table design */
 table, td {
     border-bottom: 1px solid rgb(224, 224, 224);
     border-collapse: collapse;
@@ -102,6 +102,13 @@ hr {
     height: 1px;
     background-color: rgb(255, 206, 206);
     border: none;
+}
+
+footer {
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+    background-color: rgb(252, 240, 240);
 }
 
 footer p, footer span {

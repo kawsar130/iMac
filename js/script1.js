@@ -5,12 +5,12 @@ const storage512GbCost = 100;
 const storage1TbCost = 180;
 const deliveryPrimeCost = 0;
 const deliveryUrgentCost = 20;
-
+// initializing total price and grand total as global variable
 const priceTotal = document.getElementById('price-total');
 const priceTotalFooter = document.getElementById('price-total-footer');
 
 let priceTotalAmount;
-
+// event handling of user customization option with bubble vai
 document.getElementById('customize-config').addEventListener('click', function (event) {
     const clickedElement = event.target;
     const elementId = clickedElement.id;
@@ -51,7 +51,6 @@ document.getElementById('promo-apply-btn').addEventListener('click', function ()
         const discountedPrice = totalPriceAmount * 0.80;
         totalPrice.innerText = discountedPrice;
         totalPriceFooter.innerText = discountedPrice;
-        
     }
     promoInputField.value = '';
 });
