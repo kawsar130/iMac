@@ -45,8 +45,13 @@ document.getElementById('promo-apply-btn').addEventListener('click', function ()
     const promoInputField = document.getElementById('promo-input');
     const promoCode = promoInputField.value;
     if (promoCode == 'stevekaku') {
-        // const discountAmount = priceTotalAmount * 2;
-        console.log(priceTotalAmount);
+        const totalPrice = document.getElementById('price-total');
+        const totalPriceFooter = document.getElementById('price-total-footer');
+        const totalPriceAmount = parseFloat(totalPrice.innerText);
+        const discountedPrice = totalPriceAmount * 0.80;
+        totalPrice.innerText = discountedPrice;
+        totalPriceFooter.innerText = discountedPrice;
+        
     }
     promoInputField.value = '';
 });
@@ -71,23 +76,49 @@ function getMemoryCost(id) {
 
 function getStorageCost(id) {
     if (id == 'storage-1tb') {
+        document.getElementById('storage-1tb').style.backgroundColor = 'darkRed';
+        document.getElementById('storage-1tb').style.color = 'white';
+        document.getElementById('storage-512gb').style.backgroundColor = 'inherit';
+        document.getElementById('storage-512gb').style.color = 'inherit';
+        document.getElementById('storage-256gb').style.backgroundColor = 'inherit';
+        document.getElementById('storage-256gb').style.color = 'inherit';
         return storage1TbCost;
     }
 
     else if (id == 'storage-512gb') {
+        document.getElementById('storage-1tb').style.backgroundColor = 'inherit';
+        document.getElementById('storage-1tb').style.color = 'inherit';
+        document.getElementById('storage-512gb').style.backgroundColor = 'darkRed';
+        document.getElementById('storage-512gb').style.color = 'white';
+        document.getElementById('storage-256gb').style.backgroundColor = 'inherit';
+        document.getElementById('storage-256gb').style.color = 'inherit';
         return storage512GbCost;
     }
 
     else {
+        document.getElementById('storage-1tb').style.backgroundColor = 'inherit';
+        document.getElementById('storage-1tb').style.color = 'inherit';
+        document.getElementById('storage-512gb').style.backgroundColor = 'inherit';
+        document.getElementById('storage-512gb').style.color = 'inherit';
+        document.getElementById('storage-256gb').style.backgroundColor = 'darkRed';
+        document.getElementById('storage-256gb').style.color = 'white';
         return storage256GbCost;
     }
 }
 
 function getDeliveryCost(id) {
     if (id == 'delivery-urgent') {
+        document.getElementById('delivery-urgent').style.backgroundColor = 'darkRed';
+        document.getElementById('delivery-urgent').style.color = 'white';
+        document.getElementById('delivery-prime').style.backgroundColor = 'inherit';
+        document.getElementById('delivery-prime').style.color = 'inherit';
         return deliveryUrgentCost;
     }
     else {
+        document.getElementById('delivery-urgent').style.backgroundColor = 'inherit';
+        document.getElementById('delivery-urgent').style.color = 'inherit';
+        document.getElementById('delivery-prime').style.backgroundColor = 'darkRed';
+        document.getElementById('delivery-prime').style.color = 'white';
         return deliveryPrimeCost;
     }
 }
